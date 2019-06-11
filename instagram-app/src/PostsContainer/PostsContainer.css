@@ -1,0 +1,10 @@
+.post-header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+.like-button {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
