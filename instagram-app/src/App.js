@@ -19,15 +19,15 @@ class App extends React.Component {
   handleSearchInput = e => {
     e.preventDefault();
     this.setState({ searchInput: e.target.value });
+    console.log(this.state.searchInput);
   };
   handleFilter = e => {
     // this.setState({ searchInput: e.target.value });
     // console.log(this.state.searchInput);
-    let filtered = this.state.dummyData.filter(post => {
-      if (post.username.includes(this.state.searchInput)) {
-        return post;
-      }
-    });
+    let filtered = this.state.dummyData.filter(post =>
+      post.username.includes(this.state.searchInput)
+    );
+    console.log(filtered);
     this.setState({ filteredPosts: filtered });
   };
 
@@ -40,7 +40,7 @@ class App extends React.Component {
         />
         <PostsContainer
           posts={
-            this.state.filteredPosts > 0
+            this.state.filteredPosts.length > 0
               ? this.state.filteredPosts
               : this.state.dummyData
           }
